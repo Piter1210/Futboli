@@ -1,0 +1,28 @@
+label {
+    font-weight: bold;
+}
+input,
+select {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.save-button {
+    background-color: #288A85;
+    border: 1px solid #288A85;
+    border-radius: 0.3rem;
+    color: white;
+    padding: 0.5rem 1rem;
+  }
+
+  .error-input {
+    border-color: red;
+}
+.content{
+    display:grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax (150px, 1fr)
+  
+    );
+  
+  }

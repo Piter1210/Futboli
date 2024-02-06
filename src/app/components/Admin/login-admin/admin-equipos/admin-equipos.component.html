@@ -1,0 +1,86 @@
+<div class="sidebar" id="sidebar">
+    <app-sidebar></app-sidebar>
+</div>
+
+<nav class="navbar just fixed-navbar">
+    <h1>
+        <i class="fas fa-users"></i> Equipos
+    </h1>
+</nav>
+<div class="content">
+    <div class="search-container">
+        <div class="search-wrapper">
+            <input type="text" class="search-input" placeholder="Buscar Categorías...">
+            <button class="custom-button2">Buscar</button>
+        </div>
+    </div>
+    <!-- ------------------- -->
+
+
+    <div class="button-container">
+        <button class="custom-button" (click)="openRegistrarModal()">
+            <i class="fas fa-plus"></i> Registrar equipo
+        </button>
+    </div>
+
+    <!-- Nuevo modal de registro de equipo -->
+    <app-modalequipos-registrar *ngIf="showRegistrarModal"
+        (onCloseModal)="closeRegistrarModal()"></app-modalequipos-registrar>
+
+
+
+
+
+    <!-- --------------------- -->
+    <div class="table-container">
+        <table class="custom-table">
+            <thead> <!-- ejemplo despues se ara con ng*ngFor="" para hacer la habla automatica-->
+                <tr>
+                    <th>No</th>
+                    <th>Nombre de equipos</th>
+                    <th></th>
+                    <th>fechas de creación</th>
+                    <th>Menú de Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>equipo 1</td>
+
+                    <!--  -->
+                    <td>
+                        <button class="button-icon2" routerLink="/equipos">
+                            <i class="fas fa-external-link-alt"></i>
+                        </button>
+                    </td>
+
+                    <!--  -->
+
+
+                    <td>Fecha 1</td>
+                    <td>
+                        <!--  -->
+                        <button class="button-icon" style="color: blue;" (click)="openEditarModal()">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <app-modalequipos-editar *ngIf="showEditarModal"
+                            (onCloseModal)="closeEditarModal()"></app-modalequipos-editar>
+
+
+                        <button class="button-icon" style="color: red;" (click)="openEliminarModal()">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                        <app-modalequipos-eliminar *ngIf="showEliminarModal"
+                            (onCloseModal)="closeEliminarModal()"></app-modalequipos-eliminar>
+                        <!--  -->
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+</div>
